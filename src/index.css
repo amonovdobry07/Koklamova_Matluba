@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Samarqand palette */
+  --color-primary: #1F5F6B;
+  --color-primary-dark: #154850;
+  --color-primary-light: #2D7B8A;
+  --color-accent: #D4A574;
+  --color-accent-dark: #B8895A;
+  --color-bg: #FAF6EC;
+  --color-bg-alt: #F0E9D6;
+  --color-text: #1A2530;
+  --color-text-soft: #4A5663;
+  --color-border: rgba(31, 95, 107, 0.12);
+
+  /* Fonts */
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+
+  /* Radius & shadow */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --shadow-sm: 0 4px 14px rgba(26, 37, 48, 0.06);
+  --shadow-md: 0 12px 32px rgba(26, 37, 48, 0.10);
+  --shadow-lg: 0 24px 60px rgba(26, 37, 48, 0.14);
+
+  --container: 1320px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-text);
+  background: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+button { font-family: inherit; cursor: pointer; }
+input, textarea, select { font-family: inherit; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.005em;
+  line-height: 1.2;
+}
+
+/* Dekorativ fon (milliy his) */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 18% 0%, rgba(212,165,116,0.10) 0%, transparent 42%),
+    radial-gradient(circle at 82% 100%, rgba(31,95,107,0.07) 0%, transparent 42%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Tanlov rangi */
+::selection { background: var(--color-accent); color: var(--color-text); }
