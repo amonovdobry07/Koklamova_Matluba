@@ -45,8 +45,8 @@ function Footer() {
           <h4>{t('footer.contact')}</h4>
           <ul className="footer-contact">
             <li>📍 {t('contact.addressValue')}</li>
-            <li>📞 +998 90 123 45 67</li>
-            <li>✉️ omonovogabek79@gmail.com</li>
+            <li>📞 +998 93 965 67 63</li>
+            <li>hakimjonfayziyev589@gmail.com</li>
           </ul>
         </div>
       </div>
