@@ -26,6 +26,15 @@ function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  // Menyu ochilganda orqa fon skroll bo'lib ketmasligi uchun (qotirib qo'yish)
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+  }, [menuOpen])
+
   const changeLanguage = (code) => {
     i18n.changeLanguage(code)
     setLangOpen(false)
@@ -34,59 +43,63 @@ function Navbar() {
   const closeMenu = () => setMenuOpen(false)
 
   return (
-    <header className={`navbar ${scrolled ? 'scrolled' : ''}`}>
-      <div className="navbar-container">
-        <NavLink to="/" className="navbar-logo" onClick={closeMenu}>
-          <span className="logo-mark">M</span>
-          <span className="logo-text">Milliy Bozor</span>
-        </NavLink>
+    <>
+      {/* Qora xiralashgan orqa fon (Faqat menyu ochilganda chiqadi) */}
+      <div 
+        className={`menu-overlay ${menuOpen ? 'open' : ''}`} 
+        onClick={closeMenu}
+      ></div>
 
-        <button
-          className={`navbar-toggle ${menuOpen ? 'open' : ''}`}
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Menu"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+      <header className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+        <div className="navbar-container">
+          <NavLink to="/" className="navbar-logo" onClick={closeMenu}>
+            <span className="logo-mark">M</span>
+            <span className="logo-text">MATLUBA TEXTIL</span>
+          </NavLink>
 
-        <nav className={`navbar-nav ${menuOpen ? 'open' : ''}`}>
-          <ul className="nav-list">
-            <li><NavLink to="/" end onClick={closeMenu}>{t('nav.home')}</NavLink></li>
-            <li><NavLink to="/products" onClick={closeMenu}>{t('nav.products')}</NavLink></li>
-            <li><NavLink to="/marketplace" onClick={closeMenu}>{t('nav.marketplace')}</NavLink></li>
-            <li><NavLink to="/about" onClick={closeMenu}>{t('nav.about')}</NavLink></li>
-            <li><NavLink to="/contact" onClick={closeMenu}>{t('nav.contact')}</NavLink></li>
-          </ul>
+          <button
+            className={`navbar-toggle ${menuOpen ? 'open' : ''}`}
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Menu"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
 
-          <div className="lang-switcher">
-            <button
-              className="lang-current"
-              onClick={() => setLangOpen(!langOpen)}
-              aria-haspopup="listbox"
-              aria-expanded={langOpen}
-            >
-              {currentLang.label}
-              <span className="arrow">▾</span>
-            </button>
-            <ul className={`lang-list ${langOpen ? 'open' : ''}`} role="listbox">
-              {languages.map((lang) => (
-                <li
-                  key={lang.code}
-                  className={lang.code === currentLang.code ? 'active' : ''}
-                  onClick={() => changeLanguage(lang.code)}
-                  role="option"
-                  aria-selected={lang.code === currentLang.code}
-                >
-                  {lang.label}
-                </li>
-              ))}
+          <nav className={`navbar-nav ${menuOpen ? 'open' : ''}`}>
+            <ul className="nav-list">
+              <li style={{'--i': 1}}><NavLink to="/" end onClick={closeMenu}>{t('nav.home')}</NavLink></li>
+              <li style={{'--i': 2}}><NavLink to="/products" onClick={closeMenu}>{t('nav.products')}</NavLink></li>
+              <li style={{'--i': 3}}><NavLink to="/marketplace" onClick={closeMenu}>{t('nav.marketplace')}</NavLink></li>
+              <li style={{'--i': 4}}><NavLink to="/about" onClick={closeMenu}>{t('nav.about')}</NavLink></li>
+              <li style={{'--i': 5}}><NavLink to="/contact" onClick={closeMenu}>{t('nav.contact')}</NavLink></li>
             </ul>
-          </div>
-        </nav>
-      </div>
-    </header>
+
+            <div className="lang-switcher" style={{'--i': 6}}>
+              <button
+                className="lang-current"
+                onClick={() => setLangOpen(!langOpen)}
+              >
+                {currentLang.label}
+                <span className="arrow">▾</span>
+              </button>
+              <ul className={`lang-list ${langOpen ? 'open' : ''}`}>
+                {languages.map((lang) => (
+                  <li
+                    key={lang.code}
+                    className={lang.code === currentLang.code ? 'active' : ''}
+                    onClick={() => changeLanguage(lang.code)}
+                  >
+                    {lang.label}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </header>
+    </>
   )
 }
 

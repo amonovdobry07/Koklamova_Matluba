@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import { FaTelegramPlane, FaInstagram } from 'react-icons/fa' // Ikonkalar qo'shildi
 import './Footer.css'
 
 function Footer() {
@@ -17,6 +18,16 @@ function Footer() {
             <h3>Milliy Bozor</h3>
           </div>
           <p>{t('footer.tagline')}</p>
+          
+          {/* Ijtimoiy tarmoqlar qismi qo'shildi */}
+          <div className="footer-socials">
+            <a href="https://t.me/Matluba_Kuklamova" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+              <FaTelegramPlane />
+            </a>
+            <a href="https://instagram.com/matluba.textil" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <FaInstagram />
+            </a>
+          </div>
         </div>
 
         <div className="footer-section">

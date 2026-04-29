@@ -68,3 +68,7 @@ body::before {
 
 /* Tanlov rangi */
 ::selection { background: var(--color-accent); color: var(--color-text); }
+
+::-webkit-scrollbar{
+  display: none;
+}

@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
 import './Contact.css'
 
-const TARGET_EMAIL = 'omonovogabek79@gmail.com'
+const TARGET_EMAIL = 'hakimjonfayziyev589@gmail.com'
 
 function Contact() {
   const { t, i18n } = useTranslation()
@@ -265,7 +265,7 @@ function Contact() {
                 <span className="ct-info-arrow">↗</span>
               </a>
 
-              <a href="tel:+998901234567" className="ct-info-card ct-card-phone">
+              <a href="tel:+998939656763" className="ct-info-card ct-card-phone">
                 <div className="ct-info-icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
@@ -273,7 +273,7 @@ function Contact() {
                 </div>
                 <div className="ct-info-body">
                   <span className="ct-info-label">{t('contact.phoneLabel')}</span>
-                  <span className="ct-info-value">+998 90 123 45 67</span>
+                  <span className="ct-info-value">+998 93 965 67 63</span>
                 </div>
                 <span className="ct-info-arrow">↗</span>
               </a>
@@ -329,14 +329,16 @@ function Contact() {
           </div>
 
           <div className="ct-map-wrap">
+            {/* Lokatsiya MATLUBA TEXTIL uchun moslashtirildi */}
             <iframe
-              title="Milliy Bozor Location"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=69.2697%2C41.3061%2C69.2897%2C41.3161&layer=mapnik&marker=41.3111%2C69.2797"
+              title="MATLUBA TEXTIL Location"
+              src="https://maps.google.com/maps?q=Jondor+tumani,+Buxoro+viloyati,+Uzbekistan&hl=uz&z=13&output=embed"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
+            
             <a
-              href="https://www.openstreetmap.org/?mlat=41.3111&mlon=69.2797#map=17/41.3111/69.2797"
+              href="https://www.google.com/maps/search/Jondor+tumani,+Buxoro+viloyati"
               target="_blank"
               rel="noopener noreferrer"
               className="ct-map-link"
