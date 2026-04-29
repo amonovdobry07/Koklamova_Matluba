@@ -40,7 +40,7 @@
   background-image:
     repeating-linear-gradient(45deg, transparent 0, transparent 80px, rgba(31, 95, 107, 0.03) 80px, rgba(31, 95, 107, 0.03) 81px);
 }
-.md-hero .container { position: relative; z-index: 1; }
+.md-hero .container { position: relative; z-index: 1; margin-top: 70px; }
 
 .md-back {
   background: transparent;
@@ -403,4 +403,9 @@
     gap: 0.8rem;
   }
   .md-products-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+
+  .md-logo-fallback {
+    top: -25px;
+}
+
 }
